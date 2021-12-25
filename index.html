@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharif - Personal Portfolio</title>
+    <link rel="shortcut icon" href="assets/images/faviconIcon.png" type="image/x-icon">
+    <!-- fontAwesome cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap.min.css">
+    <!-- Page-loader -->
+    <link rel="stylesheet" href="assets/vendors/pageLoader.css">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body id="mainBase">
+    <!-------------Page loader----------->
+    <div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+    <!-------------Back to Top----------->
+    <a href="#home" class="d-none">
+        <span class="bottom-to-top" title="Back to Top">
+            <i class="fas fa-chevron-up"></i>
+        </span>
+    </a>
+    <!--------- color-change ------------> 
+    <div class="colors">
+        <div class="icon">
+            <button onclick="colorSwitch();"><i class="fas fa-cog"></i></button>
+        </div>
+        <div class="other-colors">
+            <h4>Choose Color</h4>
+            <div class="four-color">
+                <span id="red"></span>
+                <span id="pink"></span>
+                <span id="blue"></span>
+                <span id="cyan"></span>
+            </div>
+            <div class="four-color">
+                <span id="purple"></span>
+                <span id="green"></span> 
+                <span id="light-green"></span>
+                <span id="yellow"></span> 
+            </div>
+            <div title="Mode" id="toggler">
+                <input id="toggle" type="checkbox" checked>
+            </div>
+            <div class="default">
+                Default Color
+            </div>
+        </div>
+    </div>
+    <!---------- Nav section ------------>
+    <nav id="spy" class="main-nav">
+        <div class="aside-content">
+            <div class="profile">
+                <div class="image">
+                    <img class="rounded-circle" src="assets/images/profile.jpg" alt="Profile-picture">
+                </div>
+                <div class="name">
+                    Sharif Md. Minhaz
+                </div>
+            </div>
+            <div class="links nav-pills">
+                <a class="nav-link u-link" href="#home"><span><i class="fas fa-house-user"></i></span>Home</a>
+                <a class="nav-link u-link" href="#aboutme"><span><i class="fas fa-user"></i></span>About Me</a>
+                <a class="nav-link u-link" href="#services"><span><i class="fas fa-cog"></i></span>Services</a>
+                <a class="nav-link u-link" href="#summary"><span><i class="fas fa-id-badge"></i></span></i>Summary</a>
+                <a class="nav-link u-link" href="#portfolio"><span><i class="fas fa-briefcase"></i></span>Portfolio</a>
+                <a class="nav-link u-link" href="#testimonial"><span><i class="fas fa-mug-hot"></i></span>Testimonial</a>
+                <a class="nav-link u-link" href="#blog"><span><i class="fas fa-blog"></i></span>My Blog</a>
+                <a class="nav-link u-link" href="#contact"><span><i class="fas fa-address-book"></i></span>Contact</a>
+            </div>
+            <div class="social-media">
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="github"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- mobile-nav start -->
+    <nav class="secondary-nav">
+        <div class="nav-header">
+            <div class="small-img">
+                <a href="#aboutme">
+                    <img src="assets/images/profile.jpg" class="rounded-circle" width="40px" alt="profile">                    
+                </a>
+                <h3>Sharif Md. Minhaz</h3>
+            </div>
+            <div class="profile-section">
+                <div class="social-media-mo">
+                    <a href="#"><span><i data-bs-toggle="tooltip" data-bs-placement="bottom" title="facebook" class="fab fa-facebook"></i></span></a>
+                    <a href="#"><span><i data-bs-toggle="tooltip" data-bs-placement="bottom" title="twitter" class="fab fa-twitter"></i></span></a>
+                    <a href="#"><span><i data-bs-toggle="tooltip" data-bs-placement="bottom" title="github" class="fab fa-github"></i></span></a>
+                </div>
+                <div class="navBtn" id="nav-expand" onclick="clickF();crossing(this);">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-all-links">
+        <div id="select-nav" class="links nav-pills links-secondary">
+            <a class="nav-link u-link" href="#home"><span><i class="fas fa-house-user" title="Home"></i></span><span class="dh-H">Home</span></a>
+            <a class="nav-link u-link" href="#aboutme"><span><i class="fas fa-user" title="About Me"></i></span><span class="dh-H">About Me</span></a>
+            <a class="nav-link u-link" href="#services"><span><i class="fas fa-cog" title="Services"></i></span><span class="dh-H">Services</span></a>
+            <a class="nav-link u-link" href="#summary"><span><i class="fas fa-id-badge" title="Summary"></i></span><span class="dh-H">Summary</span></a>
+            <a class="nav-link u-link" href="#portfolio"><span><i class="fas fa-briefcase" title="Portfolio"></i></span><span class="dh-H">Portfolio</span></a>
+            <a class="nav-link u-link" href="#testimonial"><span><i class="fas fa-mug-hot" title="Testimonial"></i></span><span class="dh-H">Testimonial</span></a>
+            <a class="nav-link u-link" href="#blog"><span><i class="fas fa-blog" title="My Blog"></i></span><span class="dh-H">My Blog</span></a>
+            <a class="nav-link u-link" href="#contact"><span><i class="fas fa-address-book" title="Contact"></i></span><span class="dh-H">Contact</span></a>
+        </div> 
+    </div>
+    <!-- mobile-nav stop --->
+    <!------------- main section ------------->
+    <main>
+        <section id="home" class="section-part">
+            <div class="container-fluid transparent-bg">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="details">
+                            <div class="wlc-note">
+                                <span id="pin">Welcome</span> 
+                            </div>
+                            <div class="type">
+                                <h2 class="typed_js"></h2>
+                            </div>
+                            <div class="location">
+                                <span class="main-loc">Based in Pirojpur, Borishal, 
+                                    <span class="full-loc">Bangladesh.</span>
+                                    <span class="short-loc">BD.</span>
+                                </span> 
+                            </div>
+                            <div class="hire-btn">
+                                <a href="#contact"><button>Hire Me</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------- About me ---------->
+        <section id="aboutme" class="sectionL section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>ABOUT <span class="me">ME</span></h2>
+                            <p>Know Me <span class="extra">Extra</span><span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-12">
+                        <div class="short-des">
+                            <h2>I'm <span class="myName">Sharif Md. Minhaz</span>, a Web Designer.</h2>
+                            <p>
+                                I will help you build brand for your business at an affordable price. 
+                                Many clients have procured exceptional results while working with our 
+                                dedicated team. When an unknown printer took a galley of type and scrambled it to 
+                                make a type specimen book.
+                            </p>
+                            <p>
+                                Delivering work within time and budget which meets client’s requirements is our moto. 
+                                Lorem Ipsum has been the industry's standard dummy text ever when an unknown printer took a 
+                                galley.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="basic-info">
+                            <ul>
+                                <li><span>Name:</span> Sharif Md. Minhaz</li>
+                                <li><span>Email:</span> <a href="https://mail.google.com/mail/" target="_blank" class="email">contactme@gmail.com</a></li>
+                                <li><span>Age:</span> 19</li>
+                                <li><span>From:</span> Borishal, Bangladesh</li>
+                            </ul>
+                            <a href="#"><button>Download CV <i class="fas fa-download"></i></button></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="count-js">
+                            <div class="row count-base">
+                                <div class="col-lg-3 col-md-6 col-6 py-4">
+                                    <p class="count_icons"><i class="fas fa-users"></i></p>
+                                    <h2 class='numscroller number' data-min='-1000' data-max='4' data-delay='7' data-increment="10">4</h2>
+                                    <h3 class="mb-0">Members</h3>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-6 py-4">
+                                    <p class="count_icons"><i class="fas fa-tasks"></i></p>
+                                    <h2 class='numscroller number' data-min='-1000' data-max='10' data-delay='6' data-increment='10'>10</h2>
+                                    <h3 class="mb-0">Finished Projects</h3>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-6 py-4">
+                                    <p class="count_icons"><i class="fas fa-smile-beam"></i></p>
+                                    <h2 class='numscroller number' data-min='-1000' data-max='100' data-delay='5' data-increment='10'>100</h2>
+                                    <h3 class="mb-0">Satisfied Peoples</h3>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-6 py-4">
+                                    <p class="count_icons"><i class="fas fa-building"></i></p>
+                                    <h2 class='numscroller number' data-min='-1000' data-max='2' data-delay='9' data-increment='10'>2</h2>
+                                    <h3 class="mb-0">Branches</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------- services -------------->
+        <section id="services" class="sectionD section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>SERVICES</h2>
+                            <p>Those I Do<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="service-side-1">
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fab fa-js"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>JS Programming</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fas fa-pencil-ruler"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>UX/UI Design</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fas fa-drafting-compass"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>App Development</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="service-side-2">
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fas fa-bullhorn"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>SEO Marketing</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fas fa-palette"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>Graphics Designing</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                            <div class="service-div">
+                                <div class="service-icon">
+                                    <span>
+                                        <i class="fas fa-laptop-code"></i>
+                                    </span>
+                                </div>
+                                <div class="service-details">
+                                    <h2>Web Developing</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur elit adipisicing. Sequi, dicta incidunt dolorem nihil reprehend dolorum possim.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------- Resume ------------>
+        <section id="summary" class="sectionL section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>SUMMARY</h2>
+                            <p>Resume<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="educationEx">
+                            <h2>My Education</h2>
+                            <div class="eduEx-section">
+                                <div class="year">
+                                    <span>2017 - 2019</span> 
+                                </div>
+                                <div class="subject">
+                                    Science
+                                </div>
+                                <div class="institute">
+                                    Residential Laboratory College
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam quae voluptatum animi debitis aut.
+                                </div>
+                            </div>
+                            <div class="eduEx-section">
+                                <div class="year">
+                                    <span>2020 - 20??</span> 
+                                </div>
+                                <div class="subject">
+                                    Software Engineering
+                                </div>
+                                <div class="institute">
+                                    Daffodil International University
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam quae voluptatum animi debitis aut.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="educationEx exparience">
+                            <h2>My Experience</h2>
+                            <div class="eduEx-section">
+                                <div class="year">
+                                    <span>2020 - 2021</span> 
+                                </div>
+                                <div class="subject">
+                                    Web Designer
+                                </div>
+                                <div class="institute">
+                                    Core Lab It
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam quae voluptatum animi debitis aut.
+                                </div>
+                            </div>
+                            <div class="eduEx-section">
+                                <div class="year">
+                                    <span>2021 - 20??</span> 
+                                </div>
+                                <div class="subject">
+                                    Jr. Web Developer
+                                </div>
+                                <div class="institute">
+                                    Wolfpack Digita
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam quae voluptatum animi debitis aut.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------- My skills ------>
+                    <div class="col-md-6 col-12">
+                        <div class="skills">
+                            <h2>My Skills</h2>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        HTML/CSS
+                                    </div>
+                                    <div class="percent">
+                                        90%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        Javascript
+                                    </div>
+                                    <div class="percent">
+                                        75%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        Bootstrap
+                                    </div>
+                                    <div class="percent">
+                                        80%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="skills skills-right">
+                            <h2 style="color: transparent; user-select: none;">Development</h2>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        Angular Net
+                                    </div>
+                                    <div class="percent">
+                                        65%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        React JS
+                                    </div>
+                                    <div class="percent">
+                                        89%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skill-name-percent">
+                                    <div class="skill-name">
+                                        Web Development
+                                    </div>
+                                    <div class="percent">
+                                        83%
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="downloadCv-btn2">
+                            <a href="#"><button>Download CV <i class="fas fa-download"></i></button></a>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+        </section>
+        <!------------- Portfolio --------------->
+        <section id="portfolio" class="sectionD section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>PORTFOLIO</h2>
+                            <h2 style="color: var(--sectionD-heading);">PROJECT</h2>
+                            <p>My Projects<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <!----------- mix it up --------->
+                        <div class="controls">
+                            <button type="button" class="control" data-filter="all">All</button>
+                            <button type="button" class="control" data-filter=".brand">Brand</button>
+                            <button type="button" class="control" data-filter=".best">Best</button>
+                            <button type="button" class="control" data-filter=".popular">Popular</button>
+                        </div>
+                        <div class="mixitup-container">
+                            <div class="row">
+                                <div class="col-md-4 col-6">
+                                    <div class="mix brand best">
+                                        <img class="image" src="assets/images/1.png" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix popular">
+                                        <img class="image" src="assets/images/4.png" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix best height-none">
+                                        <img class="image" src="assets/images/3.jpg" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="mix best popular">
+                                        <img class="image" src="assets/images/2.jpg" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix brand">
+                                        <img class="image" src="assets/images/7.jpg" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix best height-none">
+                                        <img class="image" src="assets/images/1.png" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6 displayN">
+                                    <div class="mix best">
+                                        <img class="image" src="assets/images/3.jpg" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix popular">
+                                        <img class="image" src="assets/images/6.jpg" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                    <div class="mix best">
+                                        <img class="image" src="assets/images/1.png" alt="mixitup">
+                                        <div class="project-details">
+                                            <h3>Project name</h3>
+                                            <span>Details</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <!------------- testimonial ------------>
+        <section id="testimonial" class="sectionL section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>TESTIMONIAL</h2>
+                            <h2 style="color: var(--sectionL-heading);">REVIEWS</h2>
+                            <p>Clients Rates<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div id="testimonialSlide" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md col-12 ">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/chris-2.png" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Chris Hemsworth</div>
+                                                        <div class="profession">Web Designer from USA</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md col-12 ">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/rdj.jpg" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Robert Downey</div>
+                                                        <div class="profession">Freelancer from USA</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                      
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md col-12">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/joker.jpg" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Heath Ledger</div>
+                                                        <div class="profession">Marketing Specialist</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md col-12 ">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/al.jfif" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Md. Alamin</div>
+                                                        <div class="profession">Ceo in IT farm in BD</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md col-12 ">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/voldemort.png" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Voldamord</div>
+                                                        <div class="profession">Witchcraft Specialist</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md col-12 ">
+                                            <div class="clients-testimonial">
+                                                <div class="identity">
+                                                    <img src="assets/images/dr-strange.jpg" alt="Client">
+                                                    <div class="address">
+                                                        <div class="name">Dr. Strange</div>
+                                                        <div class="profession">Senior Doctor from London</div>
+                                                    </div>
+                                                </div>
+                                                <div class="des_client">
+                                                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis fugit ex odit. Error hic voluptatum eti eligendi nisi minus. Et ab deleniti veritatis ocre accusamus nesciunt placeat.</span>
+                                                </div>
+                                                <div class="rate">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlide" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlide" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button data-bs-target="#testimonialSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button id="btn2" data-bs-target="#testimonialSlide" data-bs-slide-to="1" class="active2" aria-label="Slide 2"></button>
+                                <button id="btn3" data-bs-target="#testimonialSlide" data-bs-slide-to="2" class="active3" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </section>
+        <!---------------- Blog ---------------->
+        <section id="blog" class="sectionD section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>BLOGS</h2>
+                            <p>My Blog<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="blog-container">
+                            <div class="blog-img">
+                                <img src="assets/images/blog1.jpg" alt="blog1">
+                                <div class="float-text">
+                                    <p>Explore Nature</span>
+                                    <span>Details</span>
+                                </div>
+                            </div>
+                            <div class="blog-des">
+                                <div class="blog-heading">
+                                    <h3>How to forget pain</h3>
+                                </div>
+                                <div class="timeAndDate">
+                                    <p>June 21, 2021 by <span><a href="#">Minhaz</a></span></p>
+                                </div>
+                                <div class="blog-txt">
+                                    Lorem ipsum dolor sit, amet consectetur. Delenitiuer magnam fugiat, ad iure velit reiciendis unde et qui. Lorem ipsumert dolor sit amet consectetur adipisicing elit.<span class="dots">...</span>
+                                    <span class="extend-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem, accusantium dolorem nostrum delectus odio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum.</span>
+                                    <div class="readMore">
+                                        <div class="innerReadMe" onclick="readMore(0);">
+                                            <span class="txt-btn">Read more</span>
+                                            <i class="show-text-icon fas fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="blog-container md-margin">
+                            <div class="blog-img">
+                                <img src="assets/images/blog2.jpg" alt="blog1">
+                                <div class="float-text">
+                                    <p>Explore Nature</span>
+                                    <span>Details</span>
+                                </div>
+                            </div>
+                            <div class="blog-des">
+                                <div class="blog-heading">
+                                    <h3>How to find out peace</h3>
+                                </div>
+                                <div class="timeAndDate">
+                                    <p>June 20, 2021 by <span><a href="#">Minhaz</a></span></p>
+                                </div>
+                                <div class="blog-txt">
+                                    Lorem ipsum dolor sit, amet consectetur. Delenitiuer magnam fugiat, ad iure velit reiciendis unde et qui. Lorem ipsumert dolor sit amet consectetur adipisicing elit.<span class="dots">...</span>
+                                    <span class="extend-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem, accusantium dolorem nostrum delectus odio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum.</span>
+                                    <div class="readMore">
+                                        <div class="innerReadMe" onclick="readMore(1);">
+                                            <span class="txt-btn">Read more</span>
+                                            <i class="show-text-icon fas fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--------------- Contact -------------->
+        <section id="contact" class="sectionL section-part">
+            <div class="container-fluid">
+                <div class="row padding">
+                    <div class="col-12">
+                        <div class="heading">
+                            <h2>CONTACT</h2>
+                            <p>Get in Touch<span class="underline"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="contact-container">
+                            <h3>ADDRESS</h3>
+                            <div class="address">
+                                Seventh Flour, Plot No.27, 09 Khilkhet Rd. Dhaka, Bangladesh.
+                            </div>
+                            <div class="contact-info">
+                                <div class="phone">
+                                    <span><i class="fas fa-phone"></i></span>
+                                    <span>(880) 176758 0002</span>
+                                </div>
+                                <div class="mobile">
+                                    <span><i class="fas fa-pager"></i></span>
+                                    <span>(880) 130867 3831</span>
+                                </div>
+                                <div class="mail">
+                                    <span><i class="fas fa-envelope"></i></span>
+                                    <span>contactme@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="follow-me">
+                                <h3>FOLLOW ME</h3>
+                                <div class="social-media-2">
+                                    <a href="javaScript:void(0)">
+                                        <i class="fab fa-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="facebook"></i>
+                                    </a>
+                                    <a href="javaScript:void(0)">
+                                        <i class="fab fa-whatsapp" data-bs-toggle="tooltip" data-bs-placement="top" title="whatsapp"></i>
+                                    </a>
+                                    <a href="javaScript:void(0)">
+                                        <i class="fab fa-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="twitter"></i>
+                                    </a>
+                                    <a href="javaScript:void(0)">
+                                        <i class="fab fa-instagram" data-bs-toggle="tooltip" data-bs-placement="top" title="instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-12">
+                        <div class="messages-box">
+                            <h3>Describe Your Needs</h3>
+                            <form class="row" action="/action_page.php">
+                                <div class="col-md-6 col-12">
+                                    <input type="text" id="textBox" placeholder="Name" required>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <input type="email" name="Email" id="email" placeholder="Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="msg" id="msg" rows="5" placeholder="Write in details about your needs...." required></textarea>
+                                </div>
+                                <div class="col-12 adjustment">
+                                    <button type="submit">
+                                        Send Message <i class="fas fa-paper-plane ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </section>
+        <!-- -------------footer------------- -->
+        <footer class="sectionD container-fluid padding">
+            <div class="row">
+                <div class="col-md-6 col-12">Copyright © 2021 <a class="footer-name" href="#">Sharif</a>. All Rights Reserved.</div>
+                <div class="col-md-6 col-12 text-end">
+                    <a href="#" title="Terms & Policy">Terms & Policy </a>
+                    <span>|</span>
+                    <a href="#" title="Disclaimer">Disclaimer</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- jQuery -->
+    <script src="assets/vendors/jquery-3.6.0.js"></script>
+    <!-- bootstrap bandle -->
+    <script src="assets/vendors/bootstrap.bundle.min.js"></script>
+    <!-- Count-js -->
+    <script src="assets/vendors/numscroller-1.0.js"></script>
+    <!-- typed js -->
+    <script src="assets/vendors/typed@2.0.12.js"></script>
+    <!-- mix it up -->
+    <script src="assets/vendors/mixitup.min.js"></script>
+    <!-- color-switcher js -->
+    <script src="assets/vendors/color-switcher.js"></script>
+    <!-- custom js -->
+    <script src="main.js"></script>
+</body>
+</html>
