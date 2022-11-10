@@ -125,6 +125,7 @@ a .bottom-to-top:hover {
 	width: 171px;
 	background-color: white;
 	border-bottom-left-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .other-colors h4 {
 	color: #757373;
@@ -198,6 +199,7 @@ a .bottom-to-top:hover {
 	padding-bottom: 5px;
 }
 #toggler input {
+	-webkit-appearance: none;
 	position: relative;
 	width: 65px;
 	height: 33px;
@@ -780,6 +782,7 @@ main {
 	opacity: 0;
 }
 .project-details h3 {
+	-webkit-appearance: none;
 	font-size: 23px;
 }
 .project-details span {
