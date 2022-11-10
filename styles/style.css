@@ -48,19 +48,11 @@ a:focus {
 	box-shadow: inset 0 0 5px rgb(104, 102, 102);
 	height: 10px;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #a8a8a8;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -68,7 +60,6 @@ a:focus {
 }
 html {
 	overflow-x: hidden;
-	overflow-y: hidden;
 	scroll-behavior: smooth;
 }
 body {
@@ -76,6 +67,7 @@ body {
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: auto;
+	scroll-behavior: smooth;
 }
 a .bottom-to-top {
 	position: fixed;
@@ -88,15 +80,9 @@ a .bottom-to-top {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
+
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
+
 	z-index: 999;
 }
 a .bottom-to-top i {
@@ -114,15 +100,7 @@ a .bottom-to-top:hover {
 	bottom: 50%;
 	z-index: 997;
 	transform: translate(0, 50%);
-	-webkit-transform: translate(0, 50%);
-	-moz-transform: translate(0, 50%);
-	-ms-transform: translate(0, 50%);
-	-o-transform: translate(0, 50%);
 	transition: right 0.5s;
-	-webkit-transition: right 0.5s;
-	-moz-transition: right 0.5s;
-	-ms-transition: right 0.5s;
-	-o-transition: right 0.5s;
 }
 .go-in {
 	right: 0px;
@@ -163,10 +141,7 @@ a .bottom-to-top:hover {
 	width: 24px;
 	margin-right: 6px;
 	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
+
 	cursor: pointer;
 }
 .four-color {
@@ -223,7 +198,6 @@ a .bottom-to-top:hover {
 	padding-bottom: 5px;
 }
 #toggler input {
-	-webkit-appearance: none;
 	position: relative;
 	width: 65px;
 	height: 33px;
@@ -234,10 +208,6 @@ a .bottom-to-top:hover {
 	cursor: pointer;
 	box-shadow: 0px 2px 5px 1px gray;
 	transition: background-image 0.5s;
-	-webkit-transition: background-image 0.5s;
-	-moz-transition: background-image 0.5s;
-	-ms-transition: background-image 0.5s;
-	-o-transition: background-image 0.5s;
 }
 #toggler input:before {
 	content: "";
@@ -250,27 +220,15 @@ a .bottom-to-top:hover {
 	border-radius: 50px;
 	background-color: #f7ca33;
 	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-o-transition: all 0.5s;
 }
 #toggler input:checked {
 	background-image: url(../assets/images/night.png);
 	transition: background-image 0.5s;
-	-webkit-transition: background-image 0.5s;
-	-moz-transition: background-image 0.5s;
-	-ms-transition: background-image 0.5s;
-	-o-transition: background-image 0.5s;
 }
 #toggler input:checked:before {
 	transform: translate(100%);
 	background-color: #ecf0f3;
 	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-o-transition: all 0.5s;
 }
 /* =============override bootstrap classes========== */
 .nav-link {
@@ -278,10 +236,6 @@ a .bottom-to-top:hover {
 	color: var(--nav-link);
 	text-decoration: none;
 	transition: color 0.15s ease-in-out;
-	-webkit-transition: color 0.15s ease-in-out;
-	-moz-transition: color 0.15s ease-in-out;
-	-ms-transition: color 0.15s ease-in-out;
-	-o-transition: color 0.15s ease-in-out;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -324,10 +278,6 @@ a .bottom-to-top:hover {
 .secondary-nav .nav-header .small-img img {
 	border: 3px solid #575f68;
 	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
 }
 .aside-content {
 	display: flex;
@@ -349,10 +299,6 @@ a .bottom-to-top:hover {
 	font-size: 19px;
 	padding-right: 14px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .social-media-mo a:first-child:hover span {
 	color: #3b5998;
@@ -374,10 +320,6 @@ a .bottom-to-top:hover {
 	background-color: white;
 	margin: 5px 0;
 	transition: 0.4s;
-	-webkit-transition: 0.4s;
-	-moz-transition: 0.4s;
-	-ms-transition: 0.4s;
-	-o-transition: 0.4s;
 }
 .navBtn div:first-child {
 	margin-top: 0;
@@ -387,20 +329,12 @@ a .bottom-to-top:hover {
 }
 .change .bar1 {
 	transform: rotate(-45deg) translate(-9px, 6px);
-	-webkit-transform: rotate(-45deg) translate(-5px, 4px);
-	-moz-transform: rotate(-45deg) translate(-9px, 6px);
-	-ms-transform: rotate(-45deg) translate(-9px, 6px);
-	-o-transform: rotate(-45deg) translate(-9px, 6px);
 }
 .change .bar2 {
 	opacity: 0;
 }
 .change .bar3 {
 	transform: rotate(45deg) translate(-8px, -8px);
-	-webkit-transform: rotate(45deg) translate(-7px, -7px);
-	-moz-transform: rotate(45deg) translate(-8px, -8px);
-	-ms-transform: rotate(45deg) translate(-8px, -8px);
-	-o-transform: rotate(45deg) translate(-8px, -8px);
 }
 .links-secondary {
 	position: fixed;
@@ -411,10 +345,6 @@ a .bottom-to-top:hover {
 	height: 0px;
 	top: 70px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 	overflow: hidden;
 }
 .myName {
@@ -458,10 +388,6 @@ a .bottom-to-top:hover {
 	font-size: 15.5px;
 	padding-bottom: 11px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .links a:last-child {
 	padding-bottom: 0;
@@ -484,10 +410,6 @@ a .bottom-to-top:hover {
 	font-size: 21px;
 	margin-right: 20px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .social-media a:last-child {
 	margin-right: 0;
@@ -546,16 +468,8 @@ main {
 	border: 2px solid var(--change-color);
 	background-color: var(--low-color);
 	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
 	cursor: pointer;
 	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-o-transition: all 0.5s;
 }
 .details .hire-btn button:hover {
 	color: white;
@@ -663,15 +577,7 @@ main {
 	border: none;
 	padding: 13px 22px;
 	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .basic-info a button:hover {
 	background-color: var(--focus-color);
@@ -739,10 +645,6 @@ main {
 	width: 70px;
 	background-color: var(--box-icon);
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
 }
 .service-div .service-icon span i {
 	color: var(--change-color);
@@ -767,10 +669,6 @@ main {
 	padding: 25px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
 }
 .educationEx .eduEx-section:last-child {
 	margin-top: 27px;
@@ -782,10 +680,6 @@ main {
 	color: white;
 	padding: 1px 8px;
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
 }
 .eduEx-section .subject {
 	padding-top: 13px;
@@ -834,10 +728,6 @@ main {
 	width: 100%;
 	background-color: #212528;
 	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
 }
 .progress-bar span {
 	width: 90%;
@@ -871,15 +761,7 @@ main {
 	padding: 11px 29px;
 	font-size: 19px;
 	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .downloadCv-btn2 a button:hover {
 	background-color: tomato;
@@ -894,15 +776,7 @@ main {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 	opacity: 0;
 }
 .project-details h3 {
@@ -916,10 +790,7 @@ button {
 	border-radius: 0;
 	border: 0;
 	padding: 0;
-	-webkit-appearance: none;
-	-webkit-border-radius: 0;
 	user-select: none;
-	-webkit-user-select: none;
 }
 button:focus {
 	outline: 0 none;
@@ -943,10 +814,6 @@ button::-moz-focus-inner {
 	font-size: 17px;
 	color: var(--normal-color) !important;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .control:hover {
 	color: var(--change-color);
@@ -969,10 +836,6 @@ button::-moz-focus-inner {
 	position: relative;
 	margin-bottom: 24px;
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 }
 .mix img {
 	overflow: hidden;
@@ -980,20 +843,11 @@ button::-moz-focus-inner {
 	width: 100%;
 	cursor: pointer;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .mix:hover img {
 	opacity: 0.4;
 	transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	-o-transform: scale(1.1);
 	filter: blur(1px);
-	-webkit-filter: blur(1px);
 }
 .mix:hover .project-details {
 	opacity: 1;
@@ -1002,10 +856,6 @@ button::-moz-focus-inner {
 .clients-testimonial {
 	background-color: var(--aside-color);
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 }
 .carousel-inner {
 	position: relative;
@@ -1023,10 +873,6 @@ button::-moz-focus-inner {
 	margin-left: 11px !important;
 	border: 1px solid black !important;
 	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
 }
 .carousel-indicators button.active {
 	background-color: var(--change-color);
@@ -1054,10 +900,6 @@ button::-moz-focus-inner {
 	width: 65px;
 	margin-right: 16px;
 	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
 }
 .identity .address .name {
 	color: var(--normal-color);
@@ -1085,30 +927,18 @@ button::-moz-focus-inner {
 .blog-container {
 	border: 1px solid rgba(77, 77, 77, 0.424);
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 }
 .blog-img {
 	position: relative;
 	background-color: black;
 	overflow: hidden;
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 }
 .blog-img .float-text {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	color: white;
 	font-size: 30px;
 	text-align: center;
@@ -1123,17 +953,9 @@ button::-moz-focus-inner {
 	cursor: pointer;
 	overflow: hidden;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .blog-img:hover img {
 	transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	-o-transform: scale(1.1);
 	opacity: 0.7;
 }
 .blog-img:hover .float-text {
@@ -1232,10 +1054,6 @@ button::-moz-focus-inner {
 	color: var(--extra-light);
 	margin-right: 14px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 .social-media-2 a:first-child:hover i {
 	color: #3b5998;
@@ -1268,15 +1086,7 @@ button::-moz-focus-inner {
 	border: 1px solid transparent;
 	padding: 14px 14px;
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
 	transition: box-shadow 0.3s;
-	-webkit-transition: box-shadow 0.3s;
-	-moz-transition: box-shadow 0.3s;
-	-ms-transition: box-shadow 0.3s;
-	-o-transition: box-shadow 0.3s;
 }
 .messages-box .row .col-12 input[type="text"]:focus,
 .messages-box .row .col-12 input[type="email"]:focus,
@@ -1291,15 +1101,7 @@ form .col-12 button[type="submit"] {
 	border: none;
 	padding: 13px 22px;
 	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 form .col-12 button[type="submit"]:hover {
 	background-color: var(--focus-color);
@@ -1331,10 +1133,6 @@ footer .row .col-12:last-child span {
 footer .row .text-end a {
 	color: var(--extra-light);
 	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
 }
 footer .row .text-end a:hover {
 	color: var(--change-color);
@@ -1643,10 +1441,6 @@ footer .row .text-end a:hover {
 	}
 	.links-secondary {
 		transition: padding-right 0.3s !important;
-		-webkit-transition: padding-right 0.3s !important;
-		-moz-transition: padding-right 0.3s !important;
-		-ms-transition: padding-right 0.3s !important;
-		-o-transition: padding-right 0.3s !important;
 	}
 }
 @media screen and (max-height: 455px) {

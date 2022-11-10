@@ -10,9 +10,9 @@ window.onscroll = function () {
 	backTotop();
 	secondNav();
 };
-var toTopbtn = document.getElementsByClassName("d-none")[0];
-var pin = document.getElementById("pin");
-var starting_point = pin.offsetTop;
+let toTopbtn = document.getElementsByClassName("d-none")[0];
+let pin = document.getElementById("pin");
+let starting_point = pin.offsetTop;
 function backTotop() {
 	if (window.pageYOffset <= starting_point) {
 		toTopbtn.classList.add("d-none");
@@ -21,8 +21,8 @@ function backTotop() {
 	}
 }
 //--------second nav scroll-spy---------//
-var navLinks = document.getElementsByClassName("nav-link");
-var points = document.getElementsByClassName("section-part");
+let navLinks = document.getElementsByClassName("nav-link");
+let points = document.getElementsByClassName("section-part");
 function secondNav() {
 	if (window.pageYOffset <= points[1].offsetTop) {
 		navLinks[0].classList.add("newColor");
@@ -82,13 +82,13 @@ function secondNav() {
 	}
 }
 //--------------tooltip-------------//
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 //-------------Typed js-------------//
-var typed = new Typed(".typed_js", {
-	strings: ["I'm Sharif Md. Minhaz.", "I'm a Freelancer.", "I'm a Web Designer."],
+let typed = new Typed(".typed_js", {
+	strings: ["I'm Sharif Md. Minhaz.", "I'm a Freelancer.", "I'm a Web Developer."],
 	typeSpeed: 80,
 	backDelay: 1200,
 	backSpeed: 50,
@@ -96,10 +96,10 @@ var typed = new Typed(".typed_js", {
 	loop: true,
 });
 //------------ mix it up--------------//
-var containerEl = document.querySelector(".mixitup-container");
-var mixer = mixitup(containerEl);
+let containerEl = document.querySelector(".mixitup-container");
+let mixer = mixitup(containerEl);
 // -----------nav button--------------//
-var nav = document.getElementById("select-nav");
+let nav = document.getElementById("select-nav");
 function clickF() {
 	if (nav.className === "links nav-pills links-secondary") {
 		nav.className += " links nav-pills links-secondary links-secondary-res";
@@ -111,14 +111,14 @@ function crossing(x) {
 	x.classList.toggle("change");
 }
 // -------------readmore-------------//
-var blogTxt = document.getElementsByClassName("extend-txt");
-var extraDots = document.getElementsByClassName("dots");
-var readMoreText = document.getElementsByClassName("txt-btn");
-var icon = document.getElementsByClassName("show-text-icon");
-var countToggler = 0;
+let blogTxt = document.getElementsByClassName("extend-txt");
+let extraDots = document.getElementsByClassName("dots");
+let readMoreText = document.getElementsByClassName("txt-btn");
+let icon = document.getElementsByClassName("show-text-icon");
+let countToggler = 0;
 function readMore(n) {
 	countToggler++;
-	if (countToggler % 2 == 1) {
+	if (countToggler % 2 === 1) {
 		blogTxt[n].style.display = "inline";
 		extraDots[n].style.display = "none";
 		readMoreText[n].innerHTML = "Read Less";
@@ -132,3 +132,9 @@ function readMore(n) {
 		icon[n].classList.add("fa-chevron-down");
 	}
 }
+// reset form after submission
+window.onbeforeunload = () => {
+	for (const form of document.getElementsByTagName("form")) {
+		form.reset();
+	}
+};
