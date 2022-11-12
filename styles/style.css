@@ -201,6 +201,7 @@ a .bottom-to-top:hover {
 }
 #toggler input {
 	-webkit-appearance: none;
+	appearance: none;
 	position: relative;
 	width: 65px;
 	height: 33px;
@@ -219,7 +220,6 @@ a .bottom-to-top:hover {
 	left: 0;
 	height: 32px;
 	width: 32px;
-	background-color: navy;
 	border-radius: 50px;
 	background-color: #f7ca33;
 	transition: all 0.5s;
@@ -789,6 +789,7 @@ main {
 }
 .project-details h3 {
 	-webkit-appearance: none;
+	appearance: none;
 	font-size: 23px;
 }
 .project-details span {

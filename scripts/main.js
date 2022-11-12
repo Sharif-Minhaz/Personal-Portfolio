@@ -130,13 +130,13 @@ function setBlogsParts(n, text, dots, spanText, iconDown, iconUp, state) {
 
 function readMore(n) {
 	if (readMoreText[n].dataset.state === "close") {
-		setBlogsParts(n, "inline", "none", "Read more", "fa-chevron-down", "fa-chevron-up", "open");
+		setBlogsParts(n, "inline", "none", "Read less", "fa-chevron-down", "fa-chevron-up", "open");
 	} else {
 		setBlogsParts(
 			n,
 			"none",
 			"inline",
-			"Read less",
+			"Read more",
 			"fa-chevron-up",
 			"fa-chevron-down",
 			"close"

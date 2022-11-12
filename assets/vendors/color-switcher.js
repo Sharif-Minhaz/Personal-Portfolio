@@ -1,10 +1,7 @@
 const root = document.querySelector(":root");
 
-// -----------colors switch--------------//
-let switches = document.getElementsByClassName("colors")[0];
-function colorSwitch() {
-	switches.classList.toggle("go-in");
-}
+let currentMode = localStorage.getItem("mode") ?? "dark";
+let theme = localStorage.getItem("theme") ?? "default";
 
 const colorButtons = document.querySelectorAll(".four-color span");
 const defaultButton = document.querySelector(".default");
@@ -40,6 +37,7 @@ function changeTheme(color = "default") {
 	});
 }
 
+// change to light or dark mode
 function changeMode(modeIndex) {
 	elementsColorVariable.forEach((colorVar, i) => {
 		root.style.setProperty(`${colorVar}`, `${elementsColor[i][modeIndex]}`); // mode received from mode.js
@@ -71,12 +69,40 @@ function removeBoxShadow() {
 	});
 }
 
-toggler.addEventListener("click", function () {
+function handleToggler() {
 	if (toggler.checked) {
+		localStorage.setItem("mode", "dark");
 		changeMode(1);
 		removeBoxShadow();
 	} else if (!toggler.checked) {
+		localStorage.setItem("mode", "light");
 		changeMode(0);
 		addBoxShadow();
 	}
-});
+}
+
+toggler.addEventListener("click", handleToggler);
+
+// automatic fetch mode data and set the toggler based on it
+if (currentMode) {
+	if (currentMode === "light") {
+		changeMode(0);
+		addBoxShadow();
+		toggler.removeAttribute("checked");
+	} else {
+		changeMode(1);
+		removeBoxShadow();
+		toggler.setAttribute("checked", true);
+	}
+}
+
+// automatic fetch theme data and set the theme based on it
+if (theme) {
+	console.log(theme);
+}
+
+// -----------colors switch--------------//
+let switches = document.getElementsByClassName("colors")[0];
+function colorSwitch() {
+	switches.classList.toggle("go-in");
+}
