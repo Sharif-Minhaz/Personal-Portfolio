@@ -1168,6 +1168,12 @@ footer .row .text-end a:hover {
 .location .main-loc .short-loc {
 	display: none;
 }
+
+/* ----------- changed color styles ------------ */
+.clicked-button {
+	scale: 0.88;
+}
+
 /* ----------- media query ----------- */
 
 @media screen and (min-width: 1604px) {

@@ -95,9 +95,11 @@ let typed = new Typed(".typed_js", {
 	cursorChar: "|",
 	loop: true,
 });
+
 //------------ mix it up--------------//
 let containerEl = document.querySelector(".mixitup-container");
 let mixer = mixitup(containerEl);
+
 // -----------nav button--------------//
 let nav = document.getElementById("select-nav");
 function clickF() {
@@ -107,15 +109,18 @@ function clickF() {
 		nav.className = "links nav-pills links-secondary";
 	}
 }
+
 function crossing(x) {
 	x.classList.toggle("change");
 }
+
 // -------------readmore-------------//
 let blogTxt = document.getElementsByClassName("extend-txt");
 let extraDots = document.getElementsByClassName("dots");
 let readMoreText = document.getElementsByClassName("txt-btn");
 let icon = document.getElementsByClassName("show-text-icon");
 let countToggler = 0;
+
 function readMore(n) {
 	countToggler++;
 	if (countToggler % 2 === 1) {
@@ -132,6 +137,7 @@ function readMore(n) {
 		icon[n].classList.add("fa-chevron-down");
 	}
 }
+
 // reset form after submission
 window.onbeforeunload = () => {
 	for (const form of document.getElementsByTagName("form")) {
