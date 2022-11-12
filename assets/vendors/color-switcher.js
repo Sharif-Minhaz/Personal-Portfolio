@@ -21,6 +21,7 @@ colorButtons.forEach((button) => {
 		button.classList.add("clicked-button");
 		resetButtons(button.id);
 		changeTheme(button.dataset.color);
+		localStorage.setItem("theme", button.dataset.color); // setting theme to local storage
 	});
 });
 
@@ -28,6 +29,7 @@ colorButtons.forEach((button) => {
 defaultButton.addEventListener("click", function () {
 	resetButtons("default");
 	changeTheme();
+	localStorage.setItem("theme", "default"); // setting theme to local storage
 });
 
 // change :root's variables
@@ -71,11 +73,11 @@ function removeBoxShadow() {
 
 function handleToggler() {
 	if (toggler.checked) {
-		localStorage.setItem("mode", "dark");
+		localStorage.setItem("mode", "dark"); // setting mode to local storage
 		changeMode(1);
 		removeBoxShadow();
 	} else if (!toggler.checked) {
-		localStorage.setItem("mode", "light");
+		localStorage.setItem("mode", "light"); // setting mode to local storage
 		changeMode(0);
 		addBoxShadow();
 	}
@@ -97,9 +99,7 @@ if (currentMode) {
 }
 
 // automatic fetch theme data and set the theme based on it
-if (theme) {
-	console.log(theme);
-}
+theme && changeTheme(theme);
 
 // -----------colors switch--------------//
 let switches = document.getElementsByClassName("colors")[0];
