@@ -41,16 +41,16 @@
 			<div class="other-colors">
 				<h4>Choose Color</h4>
 				<div class="four-color">
-					<span data-index="1" id="red"></span>
-					<span data-index="2" id="pink"></span>
-					<span data-index="3" id="blue"></span>
-					<span data-index="4" id="cyan"></span>
+					<span data-color="red" id="red"></span>
+					<span data-color="pink" id="pink"></span>
+					<span data-color="blue" id="blue"></span>
+					<span data-color="cyan" id="cyan"></span>
 				</div>
 				<div class="four-color">
-					<span data-index="5" id="purple"></span>
-					<span data-index="6" id="green"></span>
-					<span data-index="7" id="light-green"></span>
-					<span data-index="8" id="yellow"></span>
+					<span data-color="purple" id="purple"></span>
+					<span data-color="green" id="green"></span>
+					<span data-color="lightGreen" id="light-green"></span>
+					<span data-color="yellow" id="yellow"></span>
 				</div>
 				<div title="Mode" id="toggler">
 					<input id="toggle" type="checkbox" checked />
@@ -61,7 +61,7 @@
 		<!---------- Nav section ------------>
 		<nav id="spy" class="main-nav">
 			<div class="aside-content">
-				<div class="profile">
+				<div class="profile dark-theme">
 					<div class="image">
 						<img
 							class="rounded-circle"
@@ -238,7 +238,7 @@
 							<div class="heading">
 								<h2>ABOUT <span class="me">ME</span></h2>
 								<p>
-									Know Me <span class="extra">Extra</span
+									Know Me <span class="extra">More</span
 									><span class="underline"></span>
 								</p>
 							</div>
@@ -351,7 +351,7 @@
 						<div class="col-12">
 							<div class="heading">
 								<h2>SERVICES</h2>
-								<p>Those I Do<span class="underline"></span></p>
+								<p>What I Do<span class="underline"></span></p>
 							</div>
 						</div>
 						<div class="col-md-6 col-12">
@@ -535,7 +535,7 @@
 								<div class="single-skill">
 									<div class="skill-name-percent">
 										<div class="skill-name">Javascript</div>
-										<div class="percent">75%</div>
+										<div class="percent">85%</div>
 									</div>
 									<div class="progress-bar">
 										<span></span>
@@ -558,7 +558,7 @@
 								<div class="single-skill">
 									<div class="skill-name-percent">
 										<div class="skill-name">Node js</div>
-										<div class="percent">65%</div>
+										<div class="percent">85%</div>
 									</div>
 									<div class="progress-bar">
 										<span></span>
@@ -567,7 +567,7 @@
 								<div class="single-skill">
 									<div class="skill-name-percent">
 										<div class="skill-name">React JS</div>
-										<div class="percent">89%</div>
+										<div class="percent">90%</div>
 									</div>
 									<div class="progress-bar">
 										<span></span>
@@ -576,7 +576,7 @@
 								<div class="single-skill">
 									<div class="skill-name-percent">
 										<div class="skill-name">Web Development</div>
-										<div class="percent">83%</div>
+										<div class="percent">85%</div>
 									</div>
 									<div class="progress-bar">
 										<span></span>
@@ -740,7 +740,7 @@
 							<div class="heading">
 								<h2>TESTIMONIAL</h2>
 								<h2 style="color: var(--sectionL-heading)">REVIEWS</h2>
-								<p>Clients Rates<span class="underline"></span></p>
+								<p>Clients Ratting<span class="underline"></span></p>
 							</div>
 						</div>
 						<div class="col-12">
@@ -1048,7 +1048,9 @@
 										>
 										<div class="readMore">
 											<div class="innerReadMe" onclick="readMore(0);">
-												<span class="txt-btn">Read more</span>
+												<span class="txt-btn" data-state="close"
+													>Read more</span
+												>
 												<i class="show-text-icon fas fa-chevron-down"></i>
 											</div>
 										</div>
@@ -1089,7 +1091,9 @@
 										>
 										<div class="readMore">
 											<div class="innerReadMe" onclick="readMore(1);">
-												<span class="txt-btn">Read more</span>
+												<span class="txt-btn" data-state="close"
+													>Read more</span
+												>
 												<i class="show-text-icon fas fa-chevron-down"></i>
 											</div>
 										</div>
@@ -1106,13 +1110,13 @@
 					<div class="row padding">
 						<div class="col-12">
 							<div class="heading">
-								<h2>CONTACT</h2>
+								<h2>Contact</h2>
 								<p>Get in Touch<span class="underline"></span></p>
 							</div>
 						</div>
 						<div class="col-md-4 col-12">
 							<div class="contact-container">
-								<h3>ADDRESS</h3>
+								<h3>Address</h3>
 								<div class="address">
 									Seventh Flour, Plot No.27, 09 Khilkhet Rd. Dhaka, Bangladesh.
 								</div>
@@ -1131,7 +1135,7 @@
 									</div>
 								</div>
 								<div class="follow-me">
-									<h3>FOLLOW ME</h3>
+									<h3>Follow me</h3>
 									<div class="social-media-2">
 										<a href="javaScript:void(0)">
 											<i
@@ -1243,6 +1247,8 @@
 		<!-- mix it up -->
 		<script src="assets/vendors/mixitup.min.js"></script>
 		<!-- color-switcher js -->
+		<script src="./scripts/mode.js"></script>
+		<script src="./scripts/palette.js"></script>
 		<script src="assets/vendors/color-switcher.js"></script>
 		<!-- custom js -->
 		<script src="./scripts/main.js"></script>

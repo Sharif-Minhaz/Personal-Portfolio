@@ -1,18 +1,19 @@
-// ---------page loader--------------//
-$(document).ready(function () {
-	$(window).on("load", function () {
-		document.querySelector("html").style.overflowY = "auto";
-		$("body").addClass("loaded");
-	});
-});
-// ------------To top---------------//
-window.onscroll = function () {
+// ----- Page loader -----
+window.onload = () => {
+	document.querySelector("html").style.overflowY = "auto";
+	document.body.classList.add("loaded");
+};
+
+// ------------ To top ---------------//
+window.onscroll = () => {
 	backTotop();
 	secondNav();
 };
+
 let toTopbtn = document.getElementsByClassName("d-none")[0];
 let pin = document.getElementById("pin");
 let starting_point = pin.offsetTop;
+
 function backTotop() {
 	if (window.pageYOffset <= starting_point) {
 		toTopbtn.classList.add("d-none");
@@ -20,65 +21,61 @@ function backTotop() {
 		toTopbtn.classList.remove("d-none");
 	}
 }
+
 //--------second nav scroll-spy---------//
 let navLinks = document.getElementsByClassName("nav-link");
 let points = document.getElementsByClassName("section-part");
+
+function addNewColor(firstLinkIndex, lastLinkIndex) {
+	navLinks[firstLinkIndex].classList.add("newColor");
+	navLinks[lastLinkIndex].classList.add("newColor");
+}
+
+function removeNewColor(firstLinkIndex, lastLinkIndex) {
+	navLinks[firstLinkIndex].classList.remove("newColor");
+	navLinks[lastLinkIndex].classList.remove("newColor");
+}
+
 function secondNav() {
 	if (window.pageYOffset <= points[1].offsetTop) {
-		navLinks[0].classList.add("newColor");
-		navLinks[8].classList.add("newColor");
+		addNewColor(0, 8);
 	} else {
-		navLinks[0].classList.remove("newColor");
-		navLinks[8].classList.remove("newColor");
+		removeNewColor(0, 8);
 	}
 	if (window.pageYOffset >= points[1].offsetTop && window.pageYOffset < points[2].offsetTop) {
-		navLinks[1].classList.add("newColor");
-		navLinks[9].classList.add("newColor");
+		addNewColor(1, 9);
 	} else {
-		navLinks[1].classList.remove("newColor");
-		navLinks[9].classList.remove("newColor");
+		removeNewColor(1, 9);
 	}
 	if (window.pageYOffset >= points[2].offsetTop && window.pageYOffset < points[3].offsetTop) {
-		navLinks[2].classList.add("newColor");
-		navLinks[10].classList.add("newColor");
+		addNewColor(2, 10);
 	} else {
-		navLinks[2].classList.remove("newColor");
-		navLinks[10].classList.remove("newColor");
+		removeNewColor(2, 10);
 	}
 	if (window.pageYOffset >= points[3].offsetTop && window.pageYOffset < points[4].offsetTop) {
-		navLinks[3].classList.add("newColor");
-		navLinks[11].classList.add("newColor");
+		addNewColor(3, 11);
 	} else {
-		navLinks[3].classList.remove("newColor");
-		navLinks[11].classList.remove("newColor");
+		removeNewColor(3, 11);
 	}
 	if (window.pageYOffset >= points[4].offsetTop && window.pageYOffset < points[5].offsetTop) {
-		navLinks[4].classList.add("newColor");
-		navLinks[12].classList.add("newColor");
+		addNewColor(4, 12);
 	} else {
-		navLinks[4].classList.remove("newColor");
-		navLinks[12].classList.remove("newColor");
+		removeNewColor(4, 12);
 	}
 	if (window.pageYOffset >= points[5].offsetTop && window.pageYOffset < points[6].offsetTop) {
-		navLinks[5].classList.add("newColor");
-		navLinks[13].classList.add("newColor");
+		addNewColor(5, 13);
 	} else {
-		navLinks[5].classList.remove("newColor");
-		navLinks[13].classList.remove("newColor");
+		removeNewColor(5, 13);
 	}
 	if (window.pageYOffset >= points[6].offsetTop && window.pageYOffset < points[7].offsetTop) {
-		navLinks[6].classList.add("newColor");
-		navLinks[14].classList.add("newColor");
+		addNewColor(6, 14);
 	} else {
-		navLinks[6].classList.remove("newColor");
-		navLinks[14].classList.remove("newColor");
+		removeNewColor(6, 14);
 	}
 	if (window.pageYOffset >= points[7].offsetTop) {
-		navLinks[7].classList.add("newColor");
-		navLinks[15].classList.add("newColor");
+		addNewColor(7, 15);
 	} else {
-		navLinks[7].classList.remove("newColor");
-		navLinks[15].classList.remove("newColor");
+		removeNewColor(7, 15);
 	}
 }
 //--------------tooltip-------------//
@@ -86,6 +83,7 @@ let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	return new bootstrap.Tooltip(tooltipTriggerEl);
 });
+
 //-------------Typed js-------------//
 let typed = new Typed(".typed_js", {
 	strings: ["I'm Sharif Md. Minhaz.", "I'm a Freelancer.", "I'm a Web Developer."],
@@ -121,20 +119,28 @@ let readMoreText = document.getElementsByClassName("txt-btn");
 let icon = document.getElementsByClassName("show-text-icon");
 let countToggler = 0;
 
+function setBlogsParts(n, text, dots, spanText, iconDown, iconUp, state) {
+	blogTxt[n].style.display = text;
+	extraDots[n].style.display = dots;
+	readMoreText[n].innerHTML = spanText;
+	icon[n].classList.remove(iconDown);
+	icon[n].classList.add(iconUp);
+	readMoreText[n].dataset.state = state;
+}
+
 function readMore(n) {
-	countToggler++;
-	if (countToggler % 2 === 1) {
-		blogTxt[n].style.display = "inline";
-		extraDots[n].style.display = "none";
-		readMoreText[n].innerHTML = "Read Less";
-		icon[n].classList.remove("fa-chevron-down");
-		icon[n].classList.add("fa-chevron-up");
+	if (readMoreText[n].dataset.state === "close") {
+		setBlogsParts(n, "inline", "none", "Read more", "fa-chevron-down", "fa-chevron-up", "open");
 	} else {
-		blogTxt[n].style.display = "none";
-		extraDots[n].style.display = "inline";
-		readMoreText[n].innerHTML = "Read More";
-		icon[n].classList.remove("fa-chevron-up");
-		icon[n].classList.add("fa-chevron-down");
+		setBlogsParts(
+			n,
+			"none",
+			"inline",
+			"Read less",
+			"fa-chevron-up",
+			"fa-chevron-down",
+			"close"
+		);
 	}
 }
 

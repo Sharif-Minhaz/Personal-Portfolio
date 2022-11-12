@@ -24,6 +24,7 @@
 	--normal-lColor: rgba(255, 255, 255, 0.8);
 	--messages-box-bg: #212528;
 	--footer-bg: #212528;
+	--light-border: rgba(255, 255, 255, 0.1);
 }
 ::selection {
 	background-color: var(--change-color);
@@ -362,7 +363,7 @@ a .bottom-to-top:hover {
 }
 .profile .image img {
 	width: 180px;
-	border: 8px solid var(--sectionL-bg);
+	border: 2px solid var(--change-color);
 }
 .profile .name {
 	padding-top: 12px;
@@ -374,12 +375,17 @@ a .bottom-to-top:hover {
 }
 .profile .name::after {
 	content: "";
-	background-color: #212528;
 	width: 123%;
 	position: absolute;
 	height: 2px;
 	bottom: -6px;
 	left: -20px;
+}
+.light-theme .name::after {
+	background-color: #ebebeb;
+}
+.dark-theme .name::after {
+	background-color: #212528;
 }
 .links {
 	padding: 14px 46px;
@@ -669,7 +675,7 @@ main {
 }
 .educationEx .eduEx-section {
 	padding: 25px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--light-border);
 	border-radius: 5px;
 }
 .educationEx .eduEx-section:last-child {
@@ -737,19 +743,19 @@ main {
 	background-color: var(--change-color);
 }
 .skills .single-skill:nth-child(3) .progress-bar span {
-	width: 75%;
+	width: 85%;
 }
 .skills .single-skill:nth-child(4) .progress-bar span {
 	width: 80%;
 }
 .skills.skills-right .single-skill:nth-child(2) .progress-bar span {
-	width: 65%;
+	width: 85%;
 }
 .skills.skills-right .single-skill:nth-child(3) .progress-bar span {
-	width: 89%;
+	width: 90%;
 }
 .skills.skills-right .single-skill:nth-child(4) .progress-bar span {
-	width: 83%;
+	width: 85%;
 }
 .downloadCv-btn2 {
 	display: flex;
@@ -991,10 +997,12 @@ button::-moz-focus-inner {
 }
 .readMore span {
 	color: #ff6347;
+	font-size: 14px;
 }
 
 .readMore i {
 	padding-left: 6px;
+	font-size: 12px;
 }
 .innerReadMe {
 	display: inline-block;
@@ -1074,7 +1082,6 @@ button::-moz-focus-inner {
 	color: #4078c0;
 }
 .messages-box h3 {
-	text-transform: uppercase;
 	color: var(--heading-color);
 	font-size: 20px;
 	margin-bottom: 20px;
