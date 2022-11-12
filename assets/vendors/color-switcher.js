@@ -99,7 +99,10 @@ if (currentMode) {
 }
 
 // automatic fetch theme data and set the theme based on it
-theme && changeTheme(theme);
+if (theme) {
+	changeTheme(theme);
+	document.getElementById(theme).classList.add("clicked-button");
+}
 
 // -----------colors switch--------------//
 let switches = document.getElementsByClassName("colors")[0];
