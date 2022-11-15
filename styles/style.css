@@ -1284,6 +1284,19 @@ footer .row .text-end a:hover {
 	#testimonial .heading h2:nth-child(2) {
 		display: none;
 	}
+	.short-des p,
+	.blog-txt,
+	.contact-container .address,
+	.contact-info .phone span:last-child,
+	.contact-info .mobile span:last-child,
+	.contact-info .mail span:last-child,
+	.eduEx-section .description,
+	.des_client span {
+		font-size: 16px;
+	}
+	.identity .address .profession {
+		font-size: 14px;
+	}
 }
 @media screen and (max-width: 800px) {
 	.details .wlc-note {
@@ -1425,7 +1438,7 @@ footer .row .text-end a:hover {
 }
 @media screen and (max-width: 390px) {
 	.links-secondary {
-		top: 78px;
+		top: 70px;
 	}
 	footer .row .col-12.main-footer-text {
 		display: flex;

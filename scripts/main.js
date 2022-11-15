@@ -10,6 +10,25 @@ window.onscroll = () => {
 	secondNav();
 };
 
+// const sections = document.querySelector("section");
+// const nav_links = document.querySelector("header nav a");
+
+// window.onscroll = () => {
+// 	sections.forEach((sec) => {
+// 		let top = window.scrollY;
+// 		let offset = sec.offsetTop;
+// 		let height = sec.offsetHeight;
+// 		let id = sec.getAttribute("id");
+
+// 		if (top >= offset && top < offset + height) {
+// 			nav_links.forEach((links) => {
+// 				links.classList.remove("active");
+// 				document.querySelector(`header nav a[href*=${id}]`).classList.add("active");
+// 			});
+// 		}
+// 	});
+// };
+
 let toTopbtn = document.getElementsByClassName("d-none")[0];
 let pin = document.getElementById("pin");
 let starting_point = pin.offsetTop;
@@ -22,7 +41,7 @@ function backTotop() {
 	}
 }
 
-//--------second nav scroll-spy---------//
+//--------Nav scroll-spy---------//
 let navLinks = document.getElementsByClassName("nav-link");
 let points = document.getElementsByClassName("section-part");
 
