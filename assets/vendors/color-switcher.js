@@ -1,7 +1,8 @@
 const root = document.querySelector(":root");
+const switches = document.getElementById("colors");
 
-let currentMode = localStorage.getItem("mode") ?? "dark";
-let theme = localStorage.getItem("theme") ?? "default";
+const currentMode = localStorage.getItem("mode") || "dark";
+let theme = localStorage.getItem("theme") || "default";
 
 const colorButtons = document.querySelectorAll(".four-color span");
 const defaultButton = document.querySelector(".default");
@@ -98,14 +99,13 @@ if (currentMode) {
 	}
 }
 
+// -----------colors switch--------------//
+function colorSwitch() {
+	switches.classList.toggle("go-in");
+}
+
 // automatic fetch theme data and set the theme based on it
 if (theme) {
 	changeTheme(theme);
 	document.getElementById(theme).classList.add("clicked-button");
-}
-
-// -----------colors switch--------------//
-let switches = document.getElementsByClassName("colors")[0];
-function colorSwitch() {
-	switches.classList.toggle("go-in");
 }

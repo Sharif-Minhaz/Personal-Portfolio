@@ -12,8 +12,8 @@ const navLink = ["#292929e6", "#ffffffe6"],
 	normalColor = ["#4a4a4a", "#ffffff"],
 	normalLColor = ["#3c3c3ccc", "rgba(255, 255, 255, 0.7)"],
 	messageBox = ["#ffffff", "#212528"],
-	footer = ["#ffffff", "#212528"];
-    lightBorder = ["rgb(0 0 0 / 10%)", "rgba(255, 255, 255, 0.1)"];
+	footer = ["#ffffff", "#212528"],
+	lightBorder = ["rgb(0 0 0 / 10%)", "rgba(255, 255, 255, 0.1)"];
 
 // mode helper variables
 const elementsColorVariable = [
@@ -49,5 +49,5 @@ const elementsColor = [
 	normalLColor,
 	messageBox,
 	footer,
-    lightBorder
+	lightBorder,
 ];

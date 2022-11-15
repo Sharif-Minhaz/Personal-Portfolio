@@ -34,7 +34,7 @@
 			</span>
 		</a>
 		<!--------- color-change ------------>
-		<div class="colors">
+		<div id="colors">
 			<div class="icon">
 				<button onclick="colorSwitch();"><i class="fas fa-cog"></i></button>
 			</div>
@@ -55,7 +55,7 @@
 				<div title="Mode" id="toggler">
 					<input id="toggle" type="checkbox" checked />
 				</div>
-				<div class="default">Default Color</div>
+				<div id="default" class="default">Default Color</div>
 			</div>
 		</div>
 		<!---------- Nav section ------------>
@@ -125,11 +125,11 @@
 							alt="profile"
 						/>
 					</a>
-					<h3>Sharif Md. Minhaz</h3>
+					<h3><span id="first-part-name">Sharif </span>Md. Minhaz</h3>
 				</div>
 				<div class="profile-section">
 					<div class="social-media-mo">
-						<a href="#"
+						<a id="facebook-link-nav" href="#"
 							><span
 								><i
 									data-bs-toggle="tooltip"
@@ -138,7 +138,7 @@
 									class="fab fa-facebook"
 								></i></span
 						></a>
-						<a href="#"
+						<a id="twitter-link-nav" href="#"
 							><span
 								><i
 									data-bs-toggle="tooltip"
@@ -1222,9 +1222,12 @@
 			<!-- -------------footer------------- -->
 			<footer class="sectionD container-fluid padding">
 				<div class="row">
-					<div class="col-md-6 col-12">
-						Copyright © 2021-22
-						<a class="footer-name" href="https://github.com/Sharif-Minhaz">Sharif</a>.
+					<div class="col-md-6 col-12 main-footer-text">
+						<span>
+							Copyright © 2021-22
+							<a class="footer-name" href="https://github.com/Sharif-Minhaz">Sharif</a
+							>.
+						</span>
 						All Rights Reserved.
 					</div>
 					<div class="col-md-6 col-12 text-end">
