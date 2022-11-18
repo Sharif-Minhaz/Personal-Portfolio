@@ -63,12 +63,14 @@ html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
+html:focus-within {
+	scroll-behavior: smooth;
+}
 body {
 	width: 100%;
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: auto;
-	scroll-behavior: smooth;
 }
 a .bottom-to-top {
 	position: fixed;
