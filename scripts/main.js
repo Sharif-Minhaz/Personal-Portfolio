@@ -5,29 +5,29 @@ window.onload = () => {
 };
 
 // ------------ To top ---------------//
+// window.onscroll = () => {
+// secondNav();
+// };
+
+const sections = document.querySelectorAll("section");
+const nav_links = document.querySelectorAll(".nav-pills a.u-link");
+
 window.onscroll = () => {
 	backTotop();
-	secondNav();
+	sections.forEach((sec) => {
+		let top = window.scrollY;
+		let offset = sec.offsetTop - 15;
+		let height = sec.offsetHeight;
+		let id = sec.getAttribute("id");
+
+		if (top >= offset && top < offset + height) {
+			nav_links.forEach((link) => {
+				link.classList.remove("newColor");
+				document.querySelector(`.nav-pills a[href*=${id}]`).classList.add("newColor");
+			});
+		}
+	});
 };
-
-// const sections = document.querySelector("section");
-// const nav_links = document.querySelector("header nav a");
-
-// window.onscroll = () => {
-// 	sections.forEach((sec) => {
-// 		let top = window.scrollY;
-// 		let offset = sec.offsetTop;
-// 		let height = sec.offsetHeight;
-// 		let id = sec.getAttribute("id");
-
-// 		if (top >= offset && top < offset + height) {
-// 			nav_links.forEach((links) => {
-// 				links.classList.remove("active");
-// 				document.querySelector(`header nav a[href*=${id}]`).classList.add("active");
-// 			});
-// 		}
-// 	});
-// };
 
 let toTopbtn = document.getElementsByClassName("d-none")[0];
 let pin = document.getElementById("pin");
