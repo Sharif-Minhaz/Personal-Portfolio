@@ -4,26 +4,24 @@ window.onload = () => {
 	document.body.classList.add("loaded");
 };
 
-// ------------ To top ---------------//
-// window.onscroll = () => {
-// secondNav();
-// };
-
 const sections = document.querySelectorAll("section");
-const nav_links = document.querySelectorAll(".nav-pills a.u-link");
+const nav_links = document.querySelectorAll(".nav-link");
 
 window.onscroll = () => {
 	backTotop();
 	sections.forEach((sec) => {
 		let top = window.scrollY;
-		let offset = sec.offsetTop - 15;
+		let offset = sec.offsetTop - 2;
 		let height = sec.offsetHeight;
 		let id = sec.getAttribute("id");
 
 		if (top >= offset && top < offset + height) {
 			nav_links.forEach((link) => {
 				link.classList.remove("newColor");
-				document.querySelector(`.nav-pills a[href*=${id}]`).classList.add("newColor");
+				const selectedLinks = document.querySelectorAll(`.nav-pills a[href*=${id}]`);
+				selectedLinks.forEach((singleLink) => {
+					singleLink.classList.add("newColor");
+				});
 			});
 		}
 	});
@@ -41,62 +39,6 @@ function backTotop() {
 	}
 }
 
-//--------Nav scroll-spy---------//
-let navLinks = document.getElementsByClassName("nav-link");
-let points = document.getElementsByClassName("section-part");
-
-function addNewColor(firstLinkIndex, lastLinkIndex) {
-	navLinks[firstLinkIndex].classList.add("newColor");
-	navLinks[lastLinkIndex].classList.add("newColor");
-}
-
-function removeNewColor(firstLinkIndex, lastLinkIndex) {
-	navLinks[firstLinkIndex].classList.remove("newColor");
-	navLinks[lastLinkIndex].classList.remove("newColor");
-}
-
-function secondNav() {
-	if (window.pageYOffset <= points[1].offsetTop) {
-		addNewColor(0, 8);
-	} else {
-		removeNewColor(0, 8);
-	}
-	if (window.pageYOffset >= points[1].offsetTop && window.pageYOffset < points[2].offsetTop) {
-		addNewColor(1, 9);
-	} else {
-		removeNewColor(1, 9);
-	}
-	if (window.pageYOffset >= points[2].offsetTop && window.pageYOffset < points[3].offsetTop) {
-		addNewColor(2, 10);
-	} else {
-		removeNewColor(2, 10);
-	}
-	if (window.pageYOffset >= points[3].offsetTop && window.pageYOffset < points[4].offsetTop) {
-		addNewColor(3, 11);
-	} else {
-		removeNewColor(3, 11);
-	}
-	if (window.pageYOffset >= points[4].offsetTop && window.pageYOffset < points[5].offsetTop) {
-		addNewColor(4, 12);
-	} else {
-		removeNewColor(4, 12);
-	}
-	if (window.pageYOffset >= points[5].offsetTop && window.pageYOffset < points[6].offsetTop) {
-		addNewColor(5, 13);
-	} else {
-		removeNewColor(5, 13);
-	}
-	if (window.pageYOffset >= points[6].offsetTop && window.pageYOffset < points[7].offsetTop) {
-		addNewColor(6, 14);
-	} else {
-		removeNewColor(6, 14);
-	}
-	if (window.pageYOffset >= points[7].offsetTop) {
-		addNewColor(7, 15);
-	} else {
-		removeNewColor(7, 15);
-	}
-}
 //--------------tooltip-------------//
 let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

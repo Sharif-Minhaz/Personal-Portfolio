@@ -81,10 +81,8 @@ a .bottom-to-top {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-
 	transition: all 0.3s;
-
-	z-index: 999;
+	z-index: 10000;
 }
 a .bottom-to-top i {
 	color: rgb(238, 238, 238);
@@ -99,7 +97,7 @@ a .bottom-to-top:hover {
 	height: 219px;
 	right: -172px;
 	bottom: 50%;
-	z-index: 997;
+	z-index: 9999;
 	transform: translate(0, 50%);
 	transition: right 0.5s;
 }
@@ -257,6 +255,7 @@ a .bottom-to-top:hover {
 	display: none;
 	padding: 15px 20px;
 	background-color: rgba(17, 20, 25, 0.64);
+	z-index: 19999;
 }
 .secondary-nav .nav-header {
 	display: flex;
@@ -1263,7 +1262,6 @@ footer .row .text-end a:hover {
 		position: fixed;
 		width: 100%;
 		top: 0;
-		z-index: 999;
 	}
 	.details .wlc-note {
 		margin-bottom: 0px;
